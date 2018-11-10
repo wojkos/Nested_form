@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 20181110204253) do
     t.string "city"
     t.string "zip_code"
     t.string "country"
-    t.bigint "user_id"
+    t.string "addressable_type"
+    t.bigint "addressable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -44,6 +45,5 @@ ActiveRecord::Schema.define(version: 20181110204253) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "companies", "users"
 end

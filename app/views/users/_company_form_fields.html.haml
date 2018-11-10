@@ -1,3 +1,5 @@
 .form-group
   = f.label :name
   = f.text_field :name, class: 'form-control'
+= f.fields_for :address do |address_form|
+  = render 'address_form_fields', f: address_form

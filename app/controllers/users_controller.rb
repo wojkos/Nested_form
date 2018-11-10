@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    @user.company = Company.new
     @user.address = Address.new
+    @user.company = Company.new
+    @user.company.address = Address.new
   end
 
   def create
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
                                 :email_address,
                                 :date_of_birth,
                                 :phone_number,
-                                company_attributes: [:id, :name],
+                                company_attributes: [:id, :name, address_attributes: [:id, :street, :city, :zip_code, :country]],
                                 address_attributes: [:id, :street, :city, :zip_code, :country])
   end
 end
