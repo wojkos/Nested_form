@@ -7,6 +7,7 @@ end
 
 gem 'bootstrap', '~> 4.1.3'
 gem 'coffee-rails', '~> 4.2'
+gem 'dry-validation', '~> 0.12.2'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
