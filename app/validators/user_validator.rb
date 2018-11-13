@@ -1,7 +1,7 @@
 class UserValidator
-  UserSchema = Dry::Validation.Schema do
+  UserSchema = Dry::Validation.Params do
     required(:user).schema do
-      required('first_name').filled
+      required(:first_name).filled
     end
   end
 end

@@ -8,19 +8,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    puts params
-    validation = UserValidator::UserSchema.with(record: @user).call(params)
-    byebug
+    p '+'*10
+    p params.permit!.to_h
+    
+    validation = UserValidator::UserSchema.with(record: @user).call(params.permit!.to_h)
+    p validation
     if validation.success?
       @user.attributes = validation.output[:user]
-      byebug
       @user.save
-      byebug
       redirect_to new_user_path, notice: 'Form send!'
     else
-      puts '__ERROR__' * 10
-      errors = validation.errors
-      render :new
+      redirect_to new_user_path, warning: "#{validation.errors}"
     end
   end
 
