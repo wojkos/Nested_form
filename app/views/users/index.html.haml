@@ -1,0 +1,24 @@
+.row
+  .col-sm-12.mb-2
+    %span
+      = link_to('New User', new_user_path, class: 'btn btn-success')
+  .col-sm-12
+    %table.table.table-hover.table-sm
+      %thead
+        %tr
+          %th First name
+          %th Last name
+          %th Email address
+          %th Date of birth
+          %th Phone
+          %th Street
+          %th City
+          %th Zip code
+          %th Country
+          %th Company name
+          %th Street
+          %th City
+          %th Zip code
+          %th Country
+      %tbody
+        = render @users
