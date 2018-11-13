@@ -16,7 +16,7 @@
         = f.text_field :email_address, class: 'form-control'
       .form-group
         = f.label :date_of_birth
-        = f.text_field :date_of_birth, class: 'form-control'
+        = f.date_field :date_of_birth, class: 'form-control', max: Date.today
       .form-group
         = f.label :phone_number
         = f.text_field :phone_number, class: 'form-control'

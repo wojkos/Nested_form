@@ -1,4 +1,0 @@
-en:
-  errors:
-    unique?: 'Is not unique'
-    phone: 'Phone should start with plus sign and contain only digits'
