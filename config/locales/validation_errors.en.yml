@@ -1,0 +1,7 @@
+en:
+  errors:
+    country?: 'Is not a correct country name'
+    email?: 'Wrong email format'
+    correct_date?: 'Wrong date'
+    phone?: 'Wrong phone number format. Use only digits with + on begining'
+    zip_code?: 'Wrong zip code format. Use 00-000 format insted'
