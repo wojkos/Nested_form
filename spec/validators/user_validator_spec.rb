@@ -9,20 +9,20 @@ require 'rails_helper'
 
 describe UserValidator do
   params =
-    { 'user' => { 'first_name' => 'Jon',
-                  'last_name' => 'Doe',
-                  'email_address' => 'jon@exaple.com',
-                  'date_of_birth' => '1990-09-12',
-                  'phone_number' => '789987789',
-                  'address_attributes' => { 'street' => 'Test',
-                                            'city' => 'Warsaw',
-                                            'zip_code' => '00-001',
-                                            'country' => 'Poland' },
-                  'company_attributes' => { 'name' => 'Super company',
-                                            'address_attributes' => { 'street' => 'Foobar',
-                                                                      'city' => 'Warsaw',
-                                                                      'zip_code' => '00-002',
-                                                                      'country' => 'Poland' } } } }
+    {'user' => {'first_name' => 'Jon',
+                'last_name' => 'Doe',
+                'email_address' => 'jon@exaple.com',
+                'date_of_birth' => '1990-09-12',
+                'phone_number' => '789987789',
+                'address_attributes' => {'street' => 'Test',
+                                         'city' => 'Warsaw',
+                                         'zip_code' => '00-001',
+                                         'country' => 'Poland'},
+                'company_attributes' => {'name' => 'Super company',
+                                         'address_attributes' => {'street' => 'Foobar',
+                                                                  'city' => 'Warsaw',
+                                                                  'zip_code' => '00-002',
+                                                                  'country' => 'Poland'}}}}
   before(:context) do
     params = params
   end

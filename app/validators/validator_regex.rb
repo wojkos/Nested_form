@@ -1,15 +1,14 @@
 module ValidatorRegex
-
-  EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/
-  PHONE_REGEX = /\A\+?\d+\z/
-  ZIP_CODE_REGEX = /\A\d{2}-\d{3}\z/
+  EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i.freeze
+  DATE_REGEX = /\A\d{4}-\d{2}-\d{2}\z/.freeze
+  PHONE_REGEX = /\A\+?\d+\z/.freeze
+  ZIP_CODE_REGEX = /\A\d{2}-\d{3}\z/.freeze
   COUNTRY_LIST = [
     'Afghanistan', 'Albania', 'Algeria', 'American Samoa',
     'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda',
     'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria',
-    'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 
-    'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 
+    'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus',
+    'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia',
     'Bosnia and Herzegowina',
     'Botswana', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory',
     'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia',

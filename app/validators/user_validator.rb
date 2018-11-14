@@ -3,7 +3,7 @@ class UserValidator
   UserSchema = Dry::Validation.Params do
     configure do
       config.messages_file =
-        File.join(Rails.root, 'config', 'locales', 'validation_errors.en.yml')
+        Rails.root.join('config', 'locales', 'validation_errors.en.yml')
 
       def country?(value)
         COUNTRY_LIST.include? value.to_s
@@ -15,7 +15,7 @@ class UserValidator
 
       def correct_date?(value)
         if !DATE_REGEX.match(value).nil?
-          Date.strptime(value, '%Y-%m-%d') < Date.today
+          Date.strptime(value, '%Y-%m-%d') < Time.zone.today
         else
           false
         end
