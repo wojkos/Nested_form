@@ -30,16 +30,16 @@ class UserValidator
       end
     end
     required(:user).schema do
-      required(:first_name) { filled? && max_size?(100) }
-      required(:last_name) { filled? && max_size?(100) }
-      required(:email_address) { filled? && email? }
+      required(:first_name).filled(max_size?: 100)
+      required(:last_name).filled(max_size?: 100)
+      required(:email_address).filled(:email?)
       required(:date_of_birth).maybe(:correct_date?)
       required(:phone_number).maybe(:phone?)
       required(:address_attributes).schema do
-        required(:street) { filled? }
-        required(:city) { filled? }
-        required(:zip_code) { filled? && zip_code? }
-        required(:country) { filled? && country? }
+        required(:street).filled
+        required(:city).filled
+        required(:zip_code).filled(:zip_code?)
+        required(:country).filled(:country?)
       end
       required(:company_attributes).schema do
         required(:name) { max_size?(200) }
