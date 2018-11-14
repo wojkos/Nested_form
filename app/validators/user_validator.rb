@@ -15,7 +15,7 @@ class UserValidator
 
       def correct_date?(value)
         if !DATE_REGEX.match(value).nil?
-          Date.strptime(value, '%d-%m-%Y') < Date.today
+          Date.strptime(value, '%Y-%m-%d') < Date.today
         else
           false
         end
