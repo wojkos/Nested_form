@@ -10,8 +10,12 @@
 
   <body>
     <div class='container'>
-      <p class='bg-success text-white'><%= notice %></p>
-      <p class='bg-warning text-white'><%= alert %></p>
+      <div class='row'>
+        <div class='col-12 text-white p-1'>
+          <p class='<%='bg-success' if notice %> p-2 w-100'><%= notice %></p>
+          <p class="<%= 'bg-warning' if alert %> p-2 w-100"><%= alert %></p>
+        </div>
+      </div>
       <%= yield %>
     </div>
   </body>
